@@ -1,7 +1,13 @@
 import businessready
+import yaml
 
+with open('testbed.yml') as info:
+    info_dict = yaml.safe_load(info)
 
-businessready.IOS_all("dist-rtr01",
-                      "developer", "C1sco12345", "10.10.20.175")
-businessready.IOS_learn_all(
-    "dist-rtr01", "developer", "C1sco12345", "10.10.20.175")
+for device in info_dict['devices']:
+    if info_dict['devices'][device]['os'] == "iosxe":
+        businessready.IOS_learn_all(device, info_dict['devices'][device]['credentials']['default']['username'], info_dict['devices']
+                                    [device]['credentials']['default']['password'], info_dict['devices'][device]['connections']['cli']['ip'])
+    elif info_dict['devices'][device]['os'] == "nxos":
+        businessready.NXOS_learn_all(device, info_dict['devices'][device]['credentials']['default']['username'], info_dict['devices']
+                                     [device]['credentials']['default']['password'], info_dict['devices'][device]['connections']['cli']['ip'])
