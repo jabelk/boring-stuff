@@ -1,5 +1,10 @@
 # boring-stuff
 
+sandbox-iosxe-recomm-1.cisco.com
+
+ansible_network_os: "ios"
+ansible_user: developer
+ansible_password: C1sco12345
 
 check out [the free online book](https://automatetheboringstuff.com)
 
@@ -47,6 +52,7 @@ If you you receive an error then ```git``` is probably not installed. If you nee
     ```bash
     docker build -t boring-stuff:latest  .
     ```
+    docker build -f ./Dockerfile -t boring-stuff:latest .
 
 5. After you have built the container then verify that the image is now in your local container repository.
 
@@ -58,12 +64,12 @@ If you you receive an error then ```git``` is probably not installed. If you nee
 
 ## Accessing The Lab
 
-Access the lab once the container is very straightfoward. After the container is built you will need to first run it. The way that I demonstrate has you open a second ```bash``` session to log it. This way if you exit out of the container you don't stop the container. If you do stop the container then you just simply need to restart the contaier by running the command ```docker start ansible-demo```.
+Access the lab once the container is very straightfoward. After the container is built you will need to first run it. The way that I demonstrate has you open a second ```bash``` session to log it. This way if you exit out of the container you don't stop the container. If you do stop the container then you just simply need to restart the contaier by running the command ```docker start stuff-demo```.
 
 1. First you will need to run the container to get it going.
 
     ```bash
-    docker run -dit --rm --name ansible-demo boring-stuff:latest
+    docker run -dit --rm --name stuff-demo boring-stuff:latest
     ```
 
 2. If the command is successful you will see a container ID (is a hash) returned in the next line. You can also verify with the following command.
@@ -75,7 +81,7 @@ Access the lab once the container is very straightfoward. After the container is
 3. Once you have verified that the container is running they log into it by running the following command.
 
     ```bash
-    docker exec -it ansible-demo bash
+    docker exec -it stuff-demo bash
     ```
 
 4. When you are in the container you will see see a prompt that will look similar to this, ```root@c91ff98ffdec:~#```. The container ID will likely be different than what you see in the example. Verify the file structure, you should be in the home directory of root on the container. It should like what you see below.
@@ -113,13 +119,13 @@ Access the lab once the container is very straightfoward. After the container is
 7. When you are done with the lab you can simply type ```exit```. If you would like to stop the container then running the following command after you have exited it.
 
     ```bash
-    docker stop ansible-demo
+    docker stop stuff-demo
     ```
 
 8. If you want to restart the container you can then run the following command.
 
     ```bash
-    docker start ansible-demo
+    docker start stuff-demo
     ```
 
     Once your container is back up and running you can just start from step 3 in this section.

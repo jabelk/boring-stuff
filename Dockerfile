@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:focal
 
 LABEL maintainer="Jason Belk <jabelk@cisco.com>"
 

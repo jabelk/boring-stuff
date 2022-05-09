@@ -17,4 +17,4 @@ pip install -r requirements.txt
 
 #CREATE ANSIBLE DIRECTORY AND THEN CLONE REPO
 mkdir boring-stuff
-git clone git@github.com:jabelk/boring-stuff.git boring-stuff
+git clone https://github.com/jabelk/boring-stuff.git boring-stuff
