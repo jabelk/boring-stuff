@@ -1,5 +1,7 @@
 # boring-stuff
 
+pyYAHTS --hostname 10.10.20.175 --os iosxe --username cisco --password cisco --command ospf
+
 sandbox-iosxe-recomm-1.cisco.com
 
 ansible_network_os: "ios"
@@ -7,6 +9,10 @@ ansible_user: developer
 ansible_password: C1sco12345
 
 check out [the free online book](https://automatetheboringstuff.com)
+
+sandbox
+https://devnetsandbox.cisco.com/RM/Diagram/Index/4385e8b6-d4c1-4bcf-aec9-8d6fead9294e
+
 
 ## Setting up Docker
 
